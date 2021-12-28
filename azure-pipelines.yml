@@ -48,7 +48,7 @@ jobs:
       make install
     displayName: Install libmfx
   - script: |
-      wget -nv -nc http://ffmpeg.org/releases/ffmpeg-$(FFMPEG_VERSION).tar.bz2 -O ffmpeg-$(FFMPEG_VERSION).tar.bz2
+      wget -nv -nc https://ffmpeg.org/releases/ffmpeg-$(FFMPEG_VERSION).tar.bz2 -O ffmpeg-$(FFMPEG_VERSION).tar.bz2
       tar xjf ffmpeg-$(FFMPEG_VERSION).tar.bz2
     displayName: Download FFmpeg
   - script: |
@@ -126,7 +126,7 @@ jobs:
       sudo apt-get install -y build-essential patchelf gcc g++ yasm libunwind8 wget
     displayName: Set up patchelf, wget, compiler
   - script: |
-      wget -nv -nc http://ffmpeg.org/releases/ffmpeg-$(FFMPEG_VERSION).tar.bz2 -O ffmpeg-$(FFMPEG_VERSION).tar.bz2
+      wget -nv -nc https://ffmpeg.org/releases/ffmpeg-$(FFMPEG_VERSION).tar.bz2 -O ffmpeg-$(FFMPEG_VERSION).tar.bz2
       tar xjf ffmpeg-$(FFMPEG_VERSION).tar.bz2
     displayName: Download FFmpeg
   - script: |
@@ -163,7 +163,7 @@ jobs:
       brew install yasm
     displayName: Install YASM
   - script: |
-      wget -nv -nc http://ffmpeg.org/releases/ffmpeg-$(FFMPEG_VERSION).tar.bz2 -O ffmpeg-$(FFMPEG_VERSION).tar.bz2
+      wget -nv -nc https://ffmpeg.org/releases/ffmpeg-$(FFMPEG_VERSION).tar.bz2 -O ffmpeg-$(FFMPEG_VERSION).tar.bz2
       tar xjf ffmpeg-$(FFMPEG_VERSION).tar.bz2
     displayName: Download FFmpeg
   - script: |
@@ -211,6 +211,7 @@ jobs:
 - job: nuget
   dependsOn:
   - windows_cross
+  - ubuntu
   - macos
   pool:
     vmImage: ubuntu-20.04
